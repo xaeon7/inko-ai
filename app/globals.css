@@ -2,26 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
   }
 }
 
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("../public/JetBrainsMono-Regular.ttf");
+}
+
+:root {
+  color-scheme: dark;
+}
+
+/* For Chrome, Safari, and Opera */
+*::-webkit-scrollbar {
+  width: 8px !important; /* Width of the scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f100 !important; /* Color of the track */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #262347 !important; /* Color of the thumb */
+  border-radius: 4px; /* Rounded corners of the thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #383463 !important; /* Color of the thumb on hover */
+}
+
+html,
+body,
+#__next {
+  @apply h-full w-full bg-neutral-900 text-neutral-100;
+}
+
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+}
+
+.cl-card {
+  background-color: #141324 !important;
+  border: 1px solid #262347 !important;
+  color: #cfcde4 !important;
+}
+
+.cl-socialButtonsBlockButton {
+  border: 1px solid #262347 !important;
+  color: #cfcde4 !important;
+}
+
+.cl-socialButtonsBlockButton:hover {
+  background-color: #262347 !important;
+}
+
+.cl-internal-b3fm6y {
+  background-color: #24a1fc !important;
+  color: #100f1c !important;
+}
+
+.cl-footerActionLink {
+  color: #24a1fc !important;
+}
+
+pre {
+  border: 1px solid #262347 !important;
+  border-radius: 8px !important;
+}
+
+code {
+  font-family: "JetBrainsMono", "Courier New", Courier, monospace !important;
+  font-size: 0.84rem !important;
+  white-space: pre-line !important;
+}
+
+pre,
+pre > code,
+pre > code > span {
+  background-color: #141324 !important;
+}
+
+p > code {
+  background-color: #141324 !important;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: 0 1px;
 }
