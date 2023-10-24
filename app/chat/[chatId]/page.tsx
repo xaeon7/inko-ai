@@ -1,5 +1,5 @@
 import Chat from "@/components/chat";
-import PDFViewer from "@/components/pdf-viewer";
+import PDFViewer from "@/components/new-pdf-viewer";
 import Sidebar from "@/components/sidebar";
 import { db } from "@/lib/db";
 import { chats } from "@/lib/db/schema";

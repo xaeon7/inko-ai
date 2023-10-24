@@ -1,15 +1,21 @@
 "use client";
 
+import React from "react";
+
 type PDFViewerProps = { pdfUrl: string };
 
 export default function PDFViewer({ pdfUrl }: PDFViewerProps) {
-  return !pdfUrl ? (
+  const [isClient, setIsClient] = React.useState(false);
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
+  return !pdfUrl || !isClient ? (
     <div className="h-full w-full bg-neutral-800" />
   ) : (
-    <iframe
-      src={`https://docs.google.com/gview?url=${encodeURI(
+    <embed
+      src={`https://docs.google.com/viewerng/viewer?embedded=true&url=${encodeURI(
         pdfUrl
-      )}&embedded=true`}
+      )}`}
       className="h-full w-full bg-neutral-800"
     />
   );
