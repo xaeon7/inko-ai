@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { Toaster } from "react-hot-toast";
 import Providers from "@/components/providers";
+import Thumbnail from "@/public/thumbnail.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Next.js",
     images: [
       {
-        url: "https://chat.x7.lol/public/thumbnail.jpg",
+        url: Thumbnail.src,
         width: 1200,
         height: 630,
         alt: "InkoAI",
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     creator: "@aalaeDev",
     images: [
       {
-        url: "https://chat.x7.lol/public/thumbnail.jpg",
+        url: Thumbnail.src,
         width: 1200,
         height: 630,
         alt: "InkoAI",
